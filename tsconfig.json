@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -15,6 +16,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
+      "@root/*": ["../src/*"],  // путь к корневому проекту
       "@/*": [
         "./src/*"
       ]
