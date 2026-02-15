@@ -1,22 +1,25 @@
 const erudaon = false;
 
-import 'primereact/resources/themes/lara-dark-cyan/theme.css';
-import 'primeflex/primeflex.css';
-import 'primeicons/primeicons.css';
-
-// Сначала включите стили пользовательского интерфейса Telegram, чтобы наш код мог переопределять CSS пакета.
-import './index.css';
-
-import ReactDOM from 'react-dom/client';
 import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
 import { retrieveLaunchParams } from '@tma.js/sdk-react';
 
 import { Root } from '@/components/Root.tsx';
 import { EnvUnsupported } from '@/components/EnvUnsupported.tsx';
+
 import { init } from '@/init.ts';
 
 // Имитируем среду на случай, если мы находимся за пределами Telegram.
-import './mockEnv.ts';
+import '@/mockEnv.ts';
+
+// CSS
+import 'primereact/resources/themes/lara-dark-cyan/theme.css';
+import 'primeflex/primeflex.css';
+import 'primeflex/themes/primeone-dark.css';
+import 'primeicons/primeicons.css';
+
+// Сначала включите стили пользовательского интерфейса Telegram, чтобы наш код мог переопределять CSS пакета.
+import '@/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
