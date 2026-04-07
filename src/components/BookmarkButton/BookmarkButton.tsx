@@ -1,5 +1,6 @@
-import { ToggleButton, ToggleButtonChangeEvent } from 'primereact/togglebutton';
 import { FC, useState } from 'react';
+
+import { ToggleButton, ToggleButtonChangeEvent } from 'primereact/togglebutton';
 
 import './BookmarkButton.css';
 

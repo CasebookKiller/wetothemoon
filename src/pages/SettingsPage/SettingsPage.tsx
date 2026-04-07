@@ -1,9 +1,12 @@
-import * as packageJson from '../../../package.json';
+import * as packageJson from '@/../package.json';
 
 const version = packageJson.version;
 
-import React, { useEffect } from 'react';
-import { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
+
+import { useForm, SubmitHandler } from 'react-hook-form';
+
+import { retrieveLaunchParams, openLink } from '@tma.js/sdk-react';
 
 import { Panel } from 'primereact/panel';
 import { FloatLabel } from 'primereact/floatlabel';
@@ -14,15 +17,13 @@ import { Chip } from 'primereact/chip';
 import { Page } from '@/components/Page';
 import { TopMenu } from '@/components/TopMenu/TopMenu';
 
-import { useForm, SubmitHandler } from 'react-hook-form';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
+import { useUser } from '@/hooks/useUser';
 
-import { retrieveLaunchParams, openLink } from '@tma.js/sdk-react';
+import { User } from '@/context/UserContext';
 
 import './SettingsPage.css';
-import { User } from '@/context/UserContext';
-import { useUser } from '@/hooks/useUser';
 
 type FormTokens = {
   fullaccess: string;

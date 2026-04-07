@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { UserContext, type User } from '../context/UserContext';
-import { useLocalStorage } from './useLocalStorage';
+import { UserContext, type User } from '@/context/UserContext';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 export const useUser = () => {
   const { user, setUser, loginVisible, setLoginVisible } = useContext(UserContext);

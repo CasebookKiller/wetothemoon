@@ -4,7 +4,7 @@ import { retrieveLaunchParams } from '@tma.js/sdk-react';
 import { Panel } from 'primereact/panel';
 import { Page } from '@/components/Page';
 
-import Supabase from '../../supabaseClient';
+import Supabase from '@/supabaseClient';
 import { PostgrestSingleResponse } from '@supabase/supabase-js';
 
 import './SupabasePage.css';
@@ -81,7 +81,7 @@ export const SupabasePage: FC = () => {
     <React.Fragment>
       <Page>
         <SBaseContext.Provider value={Supabase}>
-          <div className="SupabasePage">
+          <div className='SupabasePage'>
             <Panel
               className='shadow-5 mx-1 mt-1 mb-2'
               header={'Пользователи'}

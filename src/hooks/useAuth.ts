@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { useUser } from './useUser';
-import { useLocalStorage } from './useLocalStorage';
-import type { User } from '../context/UserContext';
+import { useUser } from '@/hooks/useUser';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
+import type { User } from '@/context/UserContext';
 
 export const useAuth = () => {
   // мы можем повторно экспортировать пользовательские методы или объекты из этого хука

@@ -1,16 +1,18 @@
-import { convertTIBond, getRiskLevel, getRiskLevelText, getStatus } from '@/api/tbank/methods';
-import { IBond } from '@/api/tbank/types';
-import { Page } from '@/components/Page';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
-import { fetchBond, fetchBondEvents } from '@/utils/common';
-
-import { Panel } from 'primereact/panel';
 import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { Panel } from 'primereact/panel';
 import { classNames } from '@/css/classnames';
 import { Tag } from 'primereact/tag';
 import { Rating } from 'primereact/rating';
+
+import { convertTIBond, getRiskLevel, getRiskLevelText, getStatus } from '@/api/tbank/methods';
+import { IBond } from '@/api/tbank/types';
+
+import { Page } from '@/components/Page';
+
+import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { fetchBond, fetchBondEvents } from '@/utils/common';
 
 const HOST = import.meta.env.VITE_HOST;
 const PORT = import.meta.env.VITE_PORT;

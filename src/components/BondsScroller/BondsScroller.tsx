@@ -1,21 +1,25 @@
-import * as RU from '../../locale/ru.json';
-import './BondsScroller.css';
-
+import * as RU from '@/locale/ru.json';
 import React, { FC, useEffect, useState } from 'react';
-import { DataScroller } from 'primereact/datascroller';
-import { IBond, TIBond } from '@/api/tbank/types';
-import { convertTIBond, getRiskLevel, getRiskLevelText, getSeverity, getStatus } from '@/api/tbank/methods';
-import { fetchBond, fetchBonds } from '@/utils/common';
-import { useAuth } from '@/hooks/useAuth';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 import { addLocale, locale as Locale  } from 'primereact/api';
 import { Rating } from 'primereact/rating';
-import { BookmarkButton } from '../BookmarkButton/BookmarkButton';
 import { FloatLabel } from 'primereact/floatlabel';
 import { InputText } from 'primereact/inputtext';
 import { Dialog } from 'primereact/dialog';
-import { Link } from '../Link/Link';
+import { DataScroller } from 'primereact/datascroller';
+
+import { IBond, TIBond } from '@/api/tbank/types';
+import { convertTIBond, getRiskLevel, getRiskLevelText, getSeverity, getStatus } from '@/api/tbank/methods';
+
+import { useAuth } from '@/hooks/useAuth';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
+
+import { fetchBond, fetchBonds } from '@/utils/common';
+
+import { Link } from '@/components/Link/Link';
+import { BookmarkButton } from '@/components/BookmarkButton/BookmarkButton';
+
+import './BondsScroller.css';
 
 const HOST = import.meta.env.VITE_HOST;
 const PORT = import.meta.env.VITE_PORT;
@@ -179,7 +183,7 @@ const BondsScroller:FC<IBondsScrollerProps> = (_props) =>{
 
   return (
     <div className='card'>
-    <div className="card flex justify-content-center">
+    <div className='card flex justify-content-center'>
       <Dialog
         header={bond?.name}
         visible={bondDialog}

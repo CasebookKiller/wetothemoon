@@ -1,5 +1,6 @@
-import type { RGB as RGBType } from '@tma.js/sdk-react';
 import type { FC, JSX } from 'react';
+
+import type { RGB as RGBType } from '@tma.js/sdk-react';
 
 import { bem } from '@/css/bem.ts';
 import { classNames } from '@/css/classnames.ts';

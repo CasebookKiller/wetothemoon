@@ -1,13 +1,15 @@
+import React, { FC } from 'react';
+
 import { MegaMenu } from 'primereact/megamenu';
 import { MenuItem } from 'primereact/menuitem';
-import React, { FC } from 'react';
+
 import { Link } from '@/components/Link/Link';
 
 export const TopMenu: FC = () => {
   const itemRenderer = (item: MenuItem) => (
-      <Link to={item.url||'/'} className="flex align-items-center p-menuitem-link">
+      <Link to={item.url||'/'} className='flex align-items-center p-menuitem-link'>
         <span className={item.icon} />
-        <span className="mx-1">{item.label}</span>
+        <span className='mx-1'>{item.label}</span>
       </Link>
     );
   const items: MenuItem[] = [
@@ -35,9 +37,9 @@ return (
   <React.Fragment>
   {true && <div id='header'
     style={{
-      position:"sticky",
+      position:'sticky',
       top: 0,
-      overflow: "hidden",
+      overflow: 'hidden',
       zIndex: 7777
     }}
   >

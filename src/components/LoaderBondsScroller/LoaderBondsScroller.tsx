@@ -1,21 +1,23 @@
-import { BondsService } from '@/api/tbank/BondsService';
-import * as RU from '../../locale/ru.json';
+import React, { FC, JSX, RefObject, useEffect, useRef, useState } from 'react';
+import * as RU from '@/locale/ru.json';
 
+import { BondsService } from '@/api/tbank/BondsService';
 import { IBond, TIBond } from '@/api/tbank/types';
+import { convertTIBond, getRiskLevel, getRiskLevelText, getSeverity, getStatus } from '@/api/tbank/methods';
+
 import { addLocale, locale as Locale  } from 'primereact/api';
 import { DataScroller } from 'primereact/datascroller';
 import { FloatLabel } from 'primereact/floatlabel';
-import { FC, JSX, RefObject, useEffect, useRef, useState } from 'react';
 import { Rating } from 'primereact/rating';
-import { convertTIBond, getRiskLevel, getRiskLevelText, getSeverity, getStatus } from '@/api/tbank/methods';
-import { BookmarkButton } from '../BookmarkButton/BookmarkButton';
 import { Tag } from 'primereact/tag';
-import React from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
+
+import { BookmarkButton } from '@/components/BookmarkButton/BookmarkButton';
+
 import { useAuth } from '@/hooks/useAuth';
-import { fetchBonds } from '@/utils/common';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { fetchBonds } from '@/utils/common';
 
 const HOST = import.meta.env.VITE_HOST;
 const PORT = import.meta.env.VITE_PORT;
@@ -171,19 +173,19 @@ const LoaderBondsScroller: FC<IBondsScrollerProps> = (props) => {
   Locale(lng);
 
   return (
-    <div className="card">
-      <div className="p-grid p-dir-col mt-4">
-        <div className="p-col-12 my-2">
+    <div className='card'>
+      <div className='p-grid p-dir-col mt-4'>
+        <div className='p-col-12 my-2'>
           <FloatLabel>
             <InputText
-              type="search"
+              type='search'
               onChange={(e) => {
                 handleFilterChange(e)}} 
               value={filterValue}
               className='profile w-full'
               id='bondsfilter'
             />
-            <label htmlFor="bondsfilter">Фильтрация...</label>
+            <label htmlFor='bondsfilter'>Фильтрация...</label>
           </FloatLabel>
         </div>
       
@@ -208,4 +210,3 @@ const LoaderBondsScroller: FC<IBondsScrollerProps> = (props) => {
 }
 
 export default LoaderBondsScroller;
-

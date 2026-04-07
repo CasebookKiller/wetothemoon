@@ -1,15 +1,17 @@
+import React, { FC, ReactNode } from 'react';
+
 import { isRGB } from '@tma.js/sdk-react';
-import type { FC, ReactNode } from 'react';
+
+import { Panel } from 'primereact/panel';
+import { Checkbox } from 'primereact/checkbox';
 
 import { RGB } from '@/components/RGB/RGB.tsx';
 import { Link } from '@/components/Link/Link.tsx';
+
 import { bem } from '@/css/bem.ts';
 
 import './DisplayData.css';
 
-import { Panel } from 'primereact/panel';
-import { Checkbox } from 'primereact/checkbox';
-import React from 'react';
 
 const [, e] = bem('display-data');
 

@@ -16,7 +16,7 @@ import './MissionsPage.css';
 
 export const PrimeReactFlex = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="p-inputgroup flex-1">
+    <div className='p-inputgroup flex-1'>
       {children}
     </div>
   )
@@ -131,7 +131,7 @@ export const MissionsPage: FC = () => {
   }, []);
 
   return (
-    <div className="MissionsPage">
+    <div className='MissionsPage'>
       <Panel
           className='shadow-5 mx-1 mt-1 mb-2'
           header={'Задания'}

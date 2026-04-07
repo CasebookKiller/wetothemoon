@@ -1,40 +1,45 @@
 const serverDebuggerOn = false;
 
-import * as RU from '../../locale/ru.json';
+import * as RU from '@/locale/ru.json';
 
-import * as packageJson from '../../../package.json';
+import * as packageJson from '@/../package.json';
 
 const version = packageJson.version;
 
-import React, { useEffect, useState } from 'react';
-import { FC } from 'react';
-
-import './CatalogPage.css';
-import { Page } from '@/components/Page';
-
-import { Panel } from 'primereact/panel';
-import { TopMenu } from '@/components/TopMenu/TopMenu';
-import { useUser } from '@/hooks/useUser';
-import { useAuth } from '@/hooks/useAuth';
-import { Avatar } from '@/components/Avatar/Avatar';
-import { Button } from 'primereact/button';
-import { classNames } from '@/css/classnames';
-import { addLocale, locale as Locale  } from 'primereact/api';
-import { User } from '@/context/UserContext';
-import { simpleConnect } from '@/utils/data-utils';
-import { fetchBonds, fetchInstrument, fetchWithToken } from '@/utils/common';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
-import { convertTIBond } from '@/api/tbank/methods';
-import { IBond, TIBond } from '@/api/tbank/types';
-import { retrieveLaunchParams } from '@tma.js/sdk-react';
+import React, { useEffect, useState, FC } from 'react';
 
 import axios from 'axios';
-import { Chip } from 'primereact/chip';
-import LoaderBondsScroller from '@/components/LoaderBondsScroller/LoaderBondsScroller';
 
-import BondsScroller from '@/components/BondsScroller/BondsScroller';
+import { retrieveLaunchParams } from '@tma.js/sdk-react';
+
+import { addLocale, locale as Locale  } from 'primereact/api';
+import { Panel } from 'primereact/panel';
+import { Button } from 'primereact/button';
+import { Chip } from 'primereact/chip';
 import { Sidebar } from 'primereact/sidebar';
 import { Toolbar } from 'primereact/toolbar';
+
+import { Page } from '@/components/Page';
+import { TopMenu } from '@/components/TopMenu/TopMenu';
+import { Avatar } from '@/components/Avatar/Avatar';
+import LoaderBondsScroller from '@/components/LoaderBondsScroller/LoaderBondsScroller';
+import BondsScroller from '@/components/BondsScroller/BondsScroller';
+
+import { useUser } from '@/hooks/useUser';
+import { useAuth } from '@/hooks/useAuth';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
+
+import { User } from '@/context/UserContext';
+
+import { classNames } from '@/css/classnames';
+
+import { simpleConnect } from '@/utils/data-utils';
+import { fetchBonds, fetchInstrument, fetchWithToken } from '@/utils/common';
+
+import { convertTIBond } from '@/api/tbank/methods';
+import { IBond, TIBond } from '@/api/tbank/types';
+
+import './CatalogPage.css';
 
 const HOST = import.meta.env.VITE_HOST;
 const PORT = import.meta.env.VITE_PORT;

@@ -82,7 +82,7 @@ export const TONConnectPage: FC = () => {
                   </span>
                 </div>
               </div>
-            <span className="app font-size-2 theme-hint-color">О кошельке</span>
+            <span className='app font-size-2 theme-hint-color'>О кошельке</span>
           </div>
           </Panel>
           <TonConnectButton className='ton-connect-page__button-connected app connect-button'/>

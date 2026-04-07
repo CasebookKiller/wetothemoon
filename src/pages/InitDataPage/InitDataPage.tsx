@@ -57,10 +57,10 @@ export const InitDataPage: FC = () => {
     return (
       <React.Fragment>
         <div>
-          <section className="app placeholder">
+          <section className='app placeholder'>
             <img
-              alt="Наклейка Telegram"
-              src="https://casebookkiller.github.io/prime-reactjs-template/telegram.gif" 
+              alt='Наклейка Telegram'
+              src='https://casebookkiller.github.io/prime-reactjs-template/telegram.gif' 
               style={{display: 'block', width: '144px', height: '144px'}}
             />
             <dl>
